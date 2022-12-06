@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th>Color</th>
+            <th>Tipo</th>
+            <th>Tamaño</th>
+            <th>accion1</th>
+            <th>accion2</th>
+         </tr>
+    </thead>
+    <tbody>
+    {% for n in pasteles %}        
+        <tr>
+        <td>{{n.sabor}}</td>
+        <td>{{n.tipo}}</td>
+        <td>{{n.tamanio}}</td>  
+        <td><button type="button" class="btn btn-dark" id="{{n.id}}" onclick="location.href='/pasteleria/actualizar/{{n.id}}'">actualizar</button></td>
+        <td><button type="button" class="btn btn-dark" id="{{n.id}}" onclick="location.href='/pasteleria/eliminar/{{n.id}}'">eliminar</button></td>
+        </tr>
+    {% endfor %}  
+    </tbody>
+</table>
+<button type="button" class="btn btn-dark" onclick="location.href='/pasteleria/crear'"> + Agregar Pastel</button>
+    <table>
+
+        
+        
+        </table>
+    
+{% endblock content %}
